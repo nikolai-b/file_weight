@@ -26,6 +26,7 @@ gem 'spring',        group: :development
 
 gem 'slim-rails'
 gem 'virtus'
+gem 'faraday_middleware'
 
 group :development, :test do
   gem 'byebug'

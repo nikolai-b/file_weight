@@ -59,6 +59,10 @@ GEM
     equalizer (0.0.9)
     erubis (2.7.0)
     execjs (2.1.0)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.9.1)
+      faraday (>= 0.7.4, < 0.10)
     hike (1.2.3)
     i18n (0.6.9)
     ice_nine (0.11.0)
@@ -76,6 +80,7 @@ GEM
     mini_portile (0.5.3)
     minitest (5.3.4)
     multi_json (1.10.1)
+    multipart-post (2.0.0)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     polyglot (0.3.4)
@@ -168,6 +173,7 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.0.0)
+  faraday_middleware
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.1)
