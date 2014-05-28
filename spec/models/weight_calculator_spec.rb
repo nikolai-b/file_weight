@@ -117,11 +117,11 @@ describe WeightCalculator do
     }
 
     it '#total_weight' do
-      expect(subject.total_weight).to eq( 372.60 )
+      expect(subject.total_weight).to eq( 372.51 )
     end
 
     it '#total_additional_weight' do
-      expect(subject.total_additional_weight).to be_within(0.0001).of( 113.81 )
+      expect(subject.total_additional_weight).to eq( 113.81 )
     end
   end
 end

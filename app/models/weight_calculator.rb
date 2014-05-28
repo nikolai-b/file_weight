@@ -28,11 +28,11 @@ class WeightCalculator
   end
 
   def total_additional_weight
-    categorys.inject(0) {|sum, ca| sum += ca[1].additional_weight}
+    (categorys.inject(0) {|sum, ca| sum += ca[1].additional_weight}).round(2)
   end
 
   def total_weight
-    categorys.inject(0) {|sum, ca| sum += ca[1].weight}
+    (categorys.inject(0) {|sum, ca| sum += ca[1].size } + total_additional_weight).round(2)
   end
 
   private
