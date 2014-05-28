@@ -10,11 +10,19 @@ class ApiConnection
         '" }, "device" : {"app_uid" : "' + user.api_uuid + '"}'
     end.to_hash
 
-    if res[:response_headers]
+    if res[:status] == 201
       set_cookie = res[:response_headers]["Set-Cookie"]
     end
 
     set_cookie
+  end
+
+  def get_files(cookie)
+    connection.get do |req|
+      req.url  '/api/open-v1.0/files.json'
+      req.headers['Content-Type'] = 'application/json'
+      req.headers['Cookie'] = cookie
+    end
   end
 
   private
