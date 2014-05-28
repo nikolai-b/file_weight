@@ -17,7 +17,8 @@ feature "Find file weights", type: :feature do
   end
 
   def see_file_weight
-    expect(page).to have_content "File weight is"
+    expect(page).to have_content "File Weights"
+    expect(page).to have_content "Add. gravity:"
   end
 end
 
