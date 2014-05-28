@@ -28,6 +28,7 @@ gem 'slim-rails'
 gem 'virtus'
 gem 'faraday_middleware'
 gem 'mimemagic'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'byebug'
