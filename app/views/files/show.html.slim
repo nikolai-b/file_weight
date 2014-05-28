@@ -1,2 +1,30 @@
 h1 Files#show
-p Find me in app/views/files/show.html.slim
+p Find me in app/views/files/show.htm
+
+table
+  thead
+    tr
+      th My Files
+      th Size (in MB)
+  tbody
+  - for item in @weight_calculator.files do
+    tr
+      td.name = item.name
+      td.size_in_MB = item.size_in_MB
+br/
+table
+  thead
+    tr
+      th Quantity
+      th Category
+      th Weight
+  tbody
+  - @weight_calculator.categorys.each do |category, item|
+    tr
+      td.quantity = item.quantity
+      td.category = category
+      td.weight = item.weight
+br/
+= "Total: = " + @weight_calculator.total_weight.to_s
+
+= "Add gravity: = " + @weight_calculator.total_additional_weight.to_s
