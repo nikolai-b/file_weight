@@ -11,8 +11,8 @@ module UserDetailsSupport
   end
 
   def env_api_uuid
-    pp "WARNING: No value in ENV['API_UUIP']" unless ENV['API_UUIP']
-    ENV['API_UUIP']
+    pp "WARNING: No value in ENV['API_UUIP']" unless ENV['API_UUID']
+    ENV['API_UUID']
   end
 end
 
