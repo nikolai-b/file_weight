@@ -13,7 +13,7 @@ feature "Find file weights", type: :feature do
     fill_in :password, with: env_password
     fill_in :api_uuid, with: env_api_uuid
 
-    click_on 'Calculate'
+    click_on 'Save'
   end
 end
 
