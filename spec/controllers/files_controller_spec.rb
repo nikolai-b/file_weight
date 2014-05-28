@@ -13,7 +13,7 @@ describe FilesController do
 
     context "with cookie" do
       before do
-        cookies[:workshare] = true
+        cookies[:workshare] = "fake cookie"
       end
 
       it "returns http success" do
