@@ -21,7 +21,9 @@ class Category
   end
 
   def ==(other)
-    @size == other.size && @quantity == other.quantity && @additional_weight == other.additional_weight
+    @size.round(2) == other.size.round(2) &&
+      @quantity == other.quantity &&
+      @additional_weight.round(2) == other.additional_weight.round(2)
   end
 
 end
