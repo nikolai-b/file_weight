@@ -14,6 +14,10 @@ describe FilesController do
     context "with cookie" do
       before do
         cookies[:workshare] = "fake cookie"
+
+        api_files = double(:api_files)
+        api_files.stub(:body).and_return({'files' => true} )
+        ApiConnection.any_instance.stub(:get_files).and_return(api_files)
       end
 
       it "returns http success" do
