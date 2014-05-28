@@ -17,10 +17,18 @@ class WeightCalculator
       size = file.size_in_MB
       additional_weight =  size * weights[file.type]
 
-      weight_and_quantity[file.type] = file.size_in_MB * weights[file.type]
+      weight_and_quantity[file.type] = file.size_in_MB * weights[file.type]Category.new(size, additional_weight, 1) + weight_and_quantity[file.type]
     end
 
     weight_and_quantity
+  end
+
+  def total_additional_weight
+    categorys.inject(0) {|sum, ca| sum += ca[1].additional_weight}
+  end
+
+  def total_weight
+    categorys.inject(0) {|sum, ca| sum += ca[1].weight}
   end
 
   private

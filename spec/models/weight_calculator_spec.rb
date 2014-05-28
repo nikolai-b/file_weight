@@ -71,7 +71,7 @@ describe WeightCalculator do
 
   describe '#categorys' do
     it "calculate the weights and quantity per category" do
-      expect(subject.categorys).to eq( {"document"=>3.0, "application"=>1.8, "video"=>79.15} )
+      expect(subject.categorys).to eq( {"document"=> Category.new(3.0,1), "application"=> Category.new(1.8,1), "video"=> Category.new(79.15,1)} )
     end
   end
 
