@@ -4,7 +4,7 @@ describe WeightCalculator do
       {
         "id"=>8998050,
         "name"=>"Get to Work in 5 Simple Steps",
-        "extension"=>"pdf",
+        "extension"=>"odt",
         "version"=>1,
         "size"=>2850957,
         "created_at"=>"2014-05-23T16:58:51Z",
@@ -67,6 +67,15 @@ describe WeightCalculator do
       expect(subject.files[0]).to be_a(FileData)
     end
   end
+
+
+  describe '#per_type' do
+    it "to calculate the wights do
+      per_type = subject.per_type
+      expect(per_type).to eq( {"document"=>3.0, "application"=>1.8, "video"=>79.15} )
+    end
+  end
+
 
 
 end
