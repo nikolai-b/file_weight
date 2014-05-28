@@ -71,10 +71,57 @@ describe WeightCalculator do
 
   describe '#categorys' do
     it "calculate the weights and quantity per category" do
-      expect(subject.categorys).to eq( {"document"=> Category.new(3.0,1), "application"=> Category.new(1.8,1), "video"=> Category.new(79.15,1)} )
+      expect(subject.categorys).to eq( {"document"=> Category.new(2.72, 0.27, 1), "application"=> Category.new(1.77, 0, 1), "video"=> Category.new(56.50, 22.6, 1)} )
     end
   end
 
+  context "with the test data" do
+    let(:response) {
+      [
+        {
+          "name"=>"wombats",
+          "extension"=>"avi",
+          "size"=>10485760,
+        },
+        {
+          "name"=>"crazy-dog",
+          "extension"=>"avi",
+          "size"=>23068672,
+        },
+        {
+          "name"=>"backinblack",
+          "extension"=>"mp3",
+          "size"=>3670016,
+        },
+        {
+          "name"=>"study1",
+          "extension"=>"odt",
+          "size"=>1.15343e6,
+        },
+        {
+          "name"=>"study2",
+          "extension"=>"docx",
+          "size"=>2097152,
+        },
+        {
+          "name"=>"firefox",
+          "extension"=>"bin",
+          "size"=>230686720,
+        },
+        {
+          "name"=>"readme",
+          "extension"=>"txt",
+          "size"=>104858,
+        },
+      ]
+    }
 
+    it '#total_weight' do
+      expect(subject.total_weight).to eq( 372.60 )
+    end
 
+    it '#total_additional_weight' do
+      expect(subject.total_additional_weight).to be_within(0.0001).of( 113.81 )
+    end
+  end
 end

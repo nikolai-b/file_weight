@@ -17,7 +17,11 @@ class WeightCalculator
       size = file.size_in_MB
       additional_weight =  size * weights[file.type]
 
-      weight_and_quantity[file.type] = file.size_in_MB * weights[file.type]Category.new(size, additional_weight, 1) + weight_and_quantity[file.type]
+      if file.type == 'text'
+        additional_weight += 100
+      end
+
+      weight_and_quantity[file.type] = Category.new(size, additional_weight, 1) + weight_and_quantity[file.type]
     end
 
     weight_and_quantity
