@@ -7,7 +7,8 @@ describe FilesController do
 
     context "without cookie" do
       it "redirects" do
-        subject.should redirect_to "/sessions/new"
+        subject
+        expect(response).to redirect_to "/sessions/new"
       end
     end
 
@@ -21,7 +22,8 @@ describe FilesController do
       end
 
       it "returns http success" do
-        subject.should be_success
+        subject
+        expect(response).to be_success
       end
     end
   end
