@@ -8,6 +8,11 @@ class SessionsController < ApplicationController
     redirect_to files_show_path
   end
 
+  def destroy
+    cookies.delete :workshare
+    redirect_to new_sessions_path
+  end
+
   private
 
   def set_user_params

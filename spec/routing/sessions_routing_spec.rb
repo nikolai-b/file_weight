@@ -12,7 +12,7 @@ describe SessionsController do
     end
 
     it "routes to #destroy" do
-      delete("/sessions/1").should route_to("sessions#destroy", :id => "1")
+      delete("/sessions/").should route_to("sessions#destroy")
     end
 
   end

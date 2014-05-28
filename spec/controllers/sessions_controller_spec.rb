@@ -9,7 +9,7 @@ describe SessionsController do
     end
   end
 
-  describe "GET 'create'" do
+  describe "POST" do
     let(:user_params) {{email: env_email, password: env_password, api_uuid: env_api_uuid}}
     let(:user) { User.new(user_params) }
 
@@ -20,4 +20,17 @@ describe SessionsController do
     end
   end
 
+  describe "DELETE" do
+    it "deletes the cookie" do
+        cookies[:workshare] = "fake cookie"
+        delete :destroy
+        expect(cookies[:workshare]).to be_nil
+    end
+
+    it "redirects to new_sessions_path" do
+        delete :destroy
+        expect(response).to redirect_to "/sessions/new"
+    end
+
+  end
 end
