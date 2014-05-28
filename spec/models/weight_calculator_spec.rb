@@ -69,10 +69,9 @@ describe WeightCalculator do
   end
 
 
-  describe '#per_type' do
-    it "to calculate the wights do
-      per_type = subject.per_type
-      expect(per_type).to eq( {"document"=>3.0, "application"=>1.8, "video"=>79.15} )
+  describe '#categorys' do
+    it "calculate the weights and quantity per category" do
+      expect(subject.categorys).to eq( {"document"=>3.0, "application"=>1.8, "video"=>79.15} )
     end
   end
 
