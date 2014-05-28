@@ -34,4 +34,24 @@ describe FileData do
     expect(subject.size_in_MB).to be_within(0.05).of(56.5008)
   end
 
+  context "with a odt extention" do
+    let(:document_input_hash) { {"extension"=>"odt"} }
+    subject { FileData.new(document_input_hash) }
+
+    it "has document type" do
+      expect(subject.type).to eq("document")
+    end
+
+  end
+
+  context "with a bin extention" do
+    let(:document_input_hash) { {"extension"=>"bin"} }
+    subject { FileData.new(document_input_hash) }
+
+    it "has binary type" do
+      expect(subject.type).to eq("binary")
+    end
+
+  end
+
 end
