@@ -28,3 +28,6 @@ br/
 = "Total: = " + @weight_calculator.total_weight.to_s
 br/
 = "Add. gravity: = " + @weight_calculator.total_additional_weight.to_s
+br/
+= link_to 'log out', '/sessions', :method => :delete, :onclick => "return confirm('Are you sure you want to log out?')"
+
